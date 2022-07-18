@@ -16,7 +16,7 @@ function App() {
   if (window.location.pathname === "/") window.location.href = "/forms"
   return (
     <div className="App">
-      {!Auth.loggedIn() ? <button onClick={() => Auth.logout()}>Sign out</button> : <></>}
+      {Auth.loggedIn() ? <button onClick={() => Auth.logout()}>Sign out</button> : <></>}
       <BrowserRouter>
         <Routes>
           <Route path="/signIn" element={<SignIn />}/>
