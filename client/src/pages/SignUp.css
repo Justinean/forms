@@ -60,6 +60,11 @@
     background-color: white;
     border: 0px solid black;
     color: #0d6efd;
+    user-select: none;
+}
+
+.SignUp .hide:hover {
+    cursor: pointer;
 }
 
 .SignUp a {

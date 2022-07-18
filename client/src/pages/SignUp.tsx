@@ -6,7 +6,8 @@ import Auth from '../utils/auth';
 
 const SignUp = () => {
     if (Auth.loggedIn()) window.location.href = "/forms";
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmValue, setConfirmValue] = useState("");
     const [hidePassword, setHidePassword] = useState(true);
@@ -14,13 +15,16 @@ const SignUp = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [hideError, setHideError] = useState(true);
     const handleEmailChange = (e: any) => {
-        setEmail(e.target.value);
+        setEmail(e.target.value.trim());
+    }
+    const handleUsernameChange = (e: any) => {
+        setUsername(e.target.value)
     }
     const handlePasswordChange = (e: any) => {
-        setPassword(e.target.value);
+        setPassword(e.target.value.trim());
     }
     const handleConfirmChange = (e: any) => {
-        setConfirmValue(e.target.value);
+        setConfirmValue(e.target.value.trim());
     }
     const handleHidePassword = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -32,16 +36,23 @@ const SignUp = () => {
     }
     const handleSignUp = async (e: React.MouseEvent) => {
         e.preventDefault();
+        setUsername(username.trim())
 
-        if (!email.match(/[a-zA-Z0-9]+@[a-z]+\.[a-z]+/)) {
+        if (!email.match(/^[a-zA-Z0-9]+@[a-z]+\.[a-z]+$/)) {
             setHideError(false);
             setErrorMessage("Email is invalid")
             setTimeout(() => {setHideError(true); setErrorMessage("");}, 3000);
             return;
         }
+        if (!username.match(/^[a-zA-Z0-9]+$/)) {
+            setHideError(false);
+            setErrorMessage("Username is invalid. Alphanumeric characters only");
+            setTimeout(() => {setHideError(true); setErrorMessage("");}, 3000);
+            return;
+        }
         if (!password.match(/^(?=.*[0-9])(?=.*[:!@#$%^&*])[a-zA-Z0-9:!@#$%^&*]{6,16}$/)) {
             setHideError(false);
-            setErrorMessage("Password is invalid\n(Must contain letter, number, and symbol)")
+            setErrorMessage("Password is invalid. (Must contain letter, number, and symbol)")
             setTimeout(() => {setHideError(true); setErrorMessage("");}, 5000);
             return;
         }
@@ -51,7 +62,7 @@ const SignUp = () => {
             setTimeout(() => {setHideError(true); setErrorMessage("");}, 3000);
             return;
         }
-        const userData = { email, password };
+        const userData = { username, email, password };
         let response = await fetch("/api/signUp", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
@@ -79,11 +90,16 @@ const SignUp = () => {
                     <input value={email} onChange={handleEmailChange}></input>
                 </div>
                 <div className="container">
+                    <label>Username</label>
+                    <br />
+                    <input value={username} onChange={handleUsernameChange}></input>
+                </div>
+                <div className="container">
                     <label>Password</label>
                     <br />
                     <input type={hidePassword ? "password" : ""} value={password} onChange={handlePasswordChange}></input>
                     <div className="hideContainer">
-                        <button className="hide" onClick={handleHidePassword}>{hidePassword ? "Show" : "Hide"} password</button>
+                        <p className="hide" onClick={handleHidePassword}>{hidePassword ? "Show" : "Hide"} password</p>
                     </div>
                 </div>
                 <div className="container lastContainer">
@@ -92,7 +108,7 @@ const SignUp = () => {
                     <input type={hideConfirm ? "password" : ""} value={confirmValue} onChange={handleConfirmChange}></input>
                     <div className="hideContainerLast">
                         <a href="/signIn">Sign in instead</a>
-                        <button className="hide" onClick={handleHideConfirm}>{hideConfirm ? "Show" : "Hide"} password</button>
+                        <p className="hide" onClick={handleHideConfirm}>{hideConfirm ? "Show" : "Hide"} password</p>
                     </div>
                     <p className={hideError ? "hiddenError" : "error"}>{errorMessage}</p>
                 </div>
