@@ -12,6 +12,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
 function App() {
+  if (window.location.pathname === "/") window.location.href = "/forms"
   return (
     <div className="App">
       <BrowserRouter>
