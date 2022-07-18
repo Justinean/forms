@@ -1,0 +1,68 @@
+.SignIn {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignIn form {
+    height: fit-content;
+    width: 400px;
+    text-align: start;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.SignIn h2 {
+    width: 100%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+.SignIn .container {
+    width: 85%;
+    margin-top: 20px;
+    margin-left: 7%;
+}
+
+.SignIn .container input {
+    width: 100%;
+}
+
+.SignIn .hideContainer {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SignIn a {
+    text-decoration: none;
+}
+
+.SignIn a:visited {
+    color: #0d6efd;
+}
+
+.SignIn .hide {
+    color: #0d6efd;
+    margin: 0;
+    user-select: none;
+}
+
+.SignIn .hide:hover {
+    cursor: pointer;
+}
+
+.SignIn .Submit {
+    margin-top: 15px;
+    margin-left: 10%;
+    width: 79%;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 450px) {
+    .SignIn form {
+        width: 300px;
+    }
+}

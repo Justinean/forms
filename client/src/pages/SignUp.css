@@ -1,0 +1,84 @@
+.SignUp {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignUp form {
+    height: fit-content;
+    width: 400px;
+    text-align: start;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.SignUp h2 {
+    width: 100%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+.SignUp .container {
+    width: 85%;
+    margin-top: 20px;
+    margin-left: 7%;
+}
+
+.SignUp .container input {
+    width: 100%;
+}
+
+.SignUp .lastContainer {
+    margin-top: 0px;
+}
+
+.SignUp .error {
+    color: red;
+    margin: 0;
+}
+
+.SignUp .hiddenError {
+    display: none;
+}
+
+.SignUp .hideContainer {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.SignUp .hideContainerLast {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SignUp .hide {
+    background-color: white;
+    border: 0px solid black;
+    color: #0d6efd;
+}
+
+.SignUp a {
+    text-decoration: none;
+}
+
+.SignUp a:visited {
+    color: #0d6efd;
+}
+
+.SignUp .Submit {
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    width: 79%;
+}
+
+@media only screen and (max-width: 450px) {
+    .SignUp form {
+        width: 300px;
+    }
+}

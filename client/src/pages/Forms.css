@@ -1,0 +1,37 @@
+.Forms {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Forms .loading {
+    font-size: 100px;
+    margin-top: 200px;
+}
+
+.Forms .textCreateButton {
+    background-color: white;
+    border: 0px solid black;
+    color: #0d6efd;
+    padding: 0;
+}
+
+.Forms .noForms { 
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.Forms .formContainer {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px 20px 30px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.Forms .buttonContainer {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+}

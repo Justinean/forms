@@ -1,0 +1,47 @@
+.EditForms {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.EditForms .successMessage {
+    border: 1px solid black;
+    position: fixed;
+    padding: 50px 30px 50px 30px;
+    right: 20px;
+    top: 20px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.EditForms .name {
+    font-size: 25px;
+    margin: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    width: 70%;
+}
+
+.EditForms .questionContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.EditForms > button {
+    margin-top: 30px;
+    width: 33%;
+}
+
+.EditForms .questionContainer > button {
+    height: 36px;
+    position: relative;
+    left: 28%;
+    top: 71px;
+    z-index: 1;
+}

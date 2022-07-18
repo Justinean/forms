@@ -1,0 +1,66 @@
+.EditQuestion {
+    margin-top: 50px;
+    width: 33%;
+    height: fit-content;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    right: 30px;
+}
+
+.EditQuestion .question {
+    font-size: 25px;
+    margin: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    width: 70%;
+}
+
+.EditQuestion .choiceList {
+    padding: 0px 0px 10px 20px;
+}
+
+.EditQuestion .choice {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 90%;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.EditQuestion .choice .subContainer {
+    min-width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.EditQuestion .choice .selectButton {
+    display: inline;
+    height: fit-content;
+    margin: 0;
+}
+
+.EditQuestion .choice input {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.EditQuestion .choice p {
+    width: 195px;
+    margin: 0;
+}
+
+.EditQuestion .choice .deleteButton {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.buttonContainer {
+    margin-bottom: 20px; 
+    margin-left: 25%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
